@@ -11,7 +11,7 @@ class Application
         resp.write "#{items}\n"
       end
     else
-      resp.write "Route not found"
+      resp.write "Item not found"
       resp.status = 404
     end
 
