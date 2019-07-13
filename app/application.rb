@@ -12,6 +12,7 @@ class Application
       if @@item.include?(search_term)
         @@item.each do |item|
           resp.write "#{item.name}, #{item.price}"
+          resp.status = 200
         end
       else
         resp.write "Item not found"
