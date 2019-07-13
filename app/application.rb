@@ -8,8 +8,8 @@ class Application
     if req.path.match(/items/)
       item = req.path.split("/items/").last
 
-      if @@items.include?(search_term)
-        @@items.each do |item|
+      if item.include?(search_term)
+        item.each do |item|
           resp.write "#{item.price}"
         end
         resp.status = 200
