@@ -6,7 +6,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      item = req.path.split("/items/").las
+      item = req.path.split("/items/").last
 
       if @@items.include?(search_term)
         @@items.each do |item|
