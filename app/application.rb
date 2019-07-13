@@ -8,7 +8,7 @@ class Application
 
     if req.path.match(/items/)
       @@item.each do |item|
-        resp.write "#{items}\n"
+        resp.write "#{item}\n"
       end
     else
       resp.write "Route not found"
