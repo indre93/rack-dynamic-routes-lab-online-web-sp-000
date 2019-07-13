@@ -7,6 +7,9 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
+      search_term = req.params["item"]
+
+      if @@item.include?(search_term)
       @@item.each do |item|
         resp.write "#{item}\n"
       end
