@@ -10,9 +10,14 @@ class Application
       search_term = req.params["item"]
 
       if @@item.include?(search_term)
-      @@item.each do |item|
-        resp.write "#{item}\n"
-      end
+        @@item.each do |item|
+          resp.write "#{item}\n"
+        end
+      else
+        resp.write "Item not found"
+        resp.status = 400
+      end 
+        
     else
       resp.write "Route not found"
       resp.status = 404
