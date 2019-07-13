@@ -11,7 +11,7 @@ class Application
 
       if @@item.include?(search_term)
         @@item.each do |item|
-          resp.write "#{item.name}, #{item.price}"
+          resp.write "#{item.name}, #{item.price}/n"
           resp.status = 200
         end
       else
